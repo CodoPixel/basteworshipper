@@ -14,7 +14,7 @@ module.exports = {
     const baste = content.toLowerCase().indexOf('baste') !== -1;
     if (baste) {
       const analysis = analyze(content);
-      if ((analysis.score > 0 && !analysis.isNegative) || analysis.isNegative) {
+      if ((analysis.score > 0 && !analysis.isNegative) || (analysis.isNegative && analysis.score === 0)) {
         message.reply("Ce message a été détecté comme négatif à l'encontre du grand Baste. Surveillez votre langage ! " + gif);
       }
     }
