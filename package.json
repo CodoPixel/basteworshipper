@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "discord.js": "^14.3.0",
+    "fs": "^0.0.1-security"
+  },
+  "name": "basteworshipper",
+  "version": "1.0.0",
+  "description": "Everyone must respect the greatest man alive: Baste.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "CodoPixel",
+  "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CodoPixel/basteworshipper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodoPixel/basteworshipper/issues"
+  },
+  "homepage": "https://github.com/CodoPixel/basteworshipper#readme"
+}
