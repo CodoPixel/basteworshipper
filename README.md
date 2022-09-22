@@ -43,3 +43,9 @@ Now the algorithm:
   score: 1, // or more than 1
 }
 ```
+
+## Commands
+
+- Use `/toggleseigneur` to toggle the mandatory prefix "Mon Seigneur". By default, it's enabled.
+- Use `/deletedatabase` to reinitialise the database.
+- Use `/isalive` to check whether the bot is online or not.

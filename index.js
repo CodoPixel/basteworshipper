@@ -15,3 +15,6 @@ client.login(client.config.token).then(() => {
    loadEvents(client);
    loadCommands(client);
 });
+client.once('ready', () => {
+   console.log("Bot is ready!");
+});
