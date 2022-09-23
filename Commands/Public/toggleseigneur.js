@@ -16,7 +16,6 @@ module.exports = {
     });
     if (seigneurToggler.length > 0) {
       isEnabled = !seigneurToggler[0].value;
-      console.log("TOGGLED isEnabled =", isEnabled);
       await Seigneur.update({ value: isEnabled }, { where: { guildId } });
     } else {
       await Seigneur.create({
