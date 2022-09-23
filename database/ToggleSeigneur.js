@@ -2,10 +2,10 @@ const Sequelize = require('sequelize');
 const { database } = require('../config.json');
 
 const sequelize = new Sequelize(database.name, database.username, database.password, {
-  host: 'localhost',
+  host: database.host,
   dialect: 'sqlite',
   logging: false,
-  storage: 'database.sqlite',
+  storage: database.storage,
 });
 
 const Seigneur = sequelize.define('seigneurs', {

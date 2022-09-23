@@ -24,8 +24,6 @@ module.exports = {
         value: false,
       });
     }
-    console.log(JSON.stringify(seigneurToggler));
-    console.log("isEnabled =", isEnabled);
     interaction.reply({ content: isEnabled ? 'Enabled' : 'Disabled', ephemeral: true });
   },
 };

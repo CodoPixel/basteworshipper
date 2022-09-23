@@ -4,7 +4,10 @@ const { Seigneur } = require('../../database/ToggleSeigneur.js');
 module.exports = {
   name: "messageCreate",
   on: true,
-  async execute(interaction, client) {
+  async execute(interaction) {
+    if (interaction.author.bot) {
+      return;
+    }
     const config = require('../../config.json');
     const gif = "https://tenor.com/view/ace-attorney-phoenix-wright-objection-capcom-gif-20965907";
     const author = interaction.author.username;
@@ -26,7 +29,7 @@ module.exports = {
       } else if (isSeigneurEnabled && content.indexOf('Mon Seigneur Baste') === -1) {
         try {
           await interaction.reply("Attention, notre dieu doit être préfixé de 'Mon Seigneur' ! Exemple : 'Mon Seigneur Baste'.");
-          await interaction.member.roles.add("1020730708509065247");
+          // await interaction.member.roles.add("1020730708509065247");
         } catch (e) {
           //console.log(interaction.member.roles);
           console.log("an error happened during role attribution");
