@@ -2,6 +2,7 @@
   "dependencies": {
     "ascii-table": "^0.0.9",
     "discord.js": "^14.3.0",
+    "dotenv": "^16.0.3",
     "fs": "^0.0.1-security",
     "sequelize": "^6.23.0",
     "sqlite3": "^5.1.1"

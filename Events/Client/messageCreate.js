@@ -8,9 +8,7 @@ module.exports = {
     if (interaction.author.bot) {
       return;
     }
-    const config = require('../../config.json');
     const gif = "https://tenor.com/view/ace-attorney-phoenix-wright-objection-capcom-gif-20965907";
-    const author = interaction.author.username;
     const content = interaction.cleanContent;
     const guildId = interaction.guildId;
     const seigneurToggler = await Seigneur.findAll({
@@ -19,9 +17,6 @@ module.exports = {
       }
     });
     const isSeigneurEnabled = seigneurToggler.length > 0 ? seigneurToggler[0].value : true;
-    if (author === config.name) {
-      return;
-    }
     const baste = content.toLowerCase().indexOf('baste') !== -1;
     if (baste) {
       if (content.toLowerCase().indexOf('baste baste baste') !== -1) {

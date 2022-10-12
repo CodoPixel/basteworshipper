@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
-const { database } = require('../config.json');
+require("dotenv").config();
 
-const sequelize = new Sequelize(database.name, database.username, database.password, {
-  host: database.host,
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.USERNAME, process.env.PASSWORD, {
+  host: process.env.DB_HOST,
   dialect: 'sqlite',
   logging: false,
-  storage: database.storage,
+  storage: process.env.DB_STORAGE,
 });
 
 const Seigneur = sequelize.define('seigneurs', {
