@@ -17,13 +17,13 @@ module.exports = {
       }
     });
     const isSeigneurEnabled = seigneurToggler.length > 0 ? seigneurToggler[0].value : true;
-    const baste = content.toLowerCase().indexOf('baste') !== -1;
+    const baste = /baste(?:[^\w]|$)/gi.test(content);
     if (baste) {
-      if (content.toLowerCase().indexOf('baste baste baste') !== -1) {
+      const bastebastebaste = /baste baste baste/gi.test(content);
+      if (bastebastebaste) {
         await interaction.reply("https://www.youtube.com/watch?v=atuFSv2bLa8");
-      } else if (isSeigneurEnabled && content.indexOf('Mon Seigneur Baste') === -1) {await interaction.reply("Attention, notre dieu doit être préfixé de 'Mon Seigneur' ! Exemple : 'Mon Seigneur Baste'.");
-        await interaction.reply("Attention, notre dieu doit être préfixé de 'Mon Seigneur' ! Exemple : 'Mon Seigneur Baste'.");
-        // await interaction.member.roles.add("1020730708509065247");
+      } else if (isSeigneurEnabled && content.indexOf('Mon Seigneur Baste') === -1) {
+        await interaction.reply("Attention, notre dieu doit être préfixé de 'Mon Seigneur' ! Exemple : 'Mon Seigneur Baste'. Si ce message t'emmerde, utilise '/toggleseigneur' (si t'as les droits).");
       } else {
         const analysis = analyze(content);
         if ((analysis.score > 0 && !analysis.isNegative) || (analysis.isNegative && analysis.score === 0)) {
