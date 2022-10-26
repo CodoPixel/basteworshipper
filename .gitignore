@@ -1,5 +1,6 @@
 node_modules/
 .idea/
+.fleet/
 config.json
 database.sqlite
 .env
